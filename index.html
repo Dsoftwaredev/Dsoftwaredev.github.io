@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./all.min.css" />
+  </head>
+  <body>
+    <nav>
+      <h2 id="logo">Daniel Maton-Walker</h2>
+      <ul class="navigation-items">
+        <li class="navigation-item"><a href="#about-me">About Me</a></li>
+        <li class="navigation-item"><a href="#projects">Projects</a></li>
+        <li class="navigation-item"><a href="#skills">Skills</a></li>
+        <li class="navigation-item"><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about-me">
+        <div class="about-me-cont">
+          <div class="about-me-text-cont">
+            <h2>About Me</h2>
+            <p>
+              Hi! I'm Daniel I am a Tech Specialist based in Birmingham. 
+              I'm a full stack engineer with experience in Java and Javascript(MERN).
+
+            </p>
+            <p>
+             I have recently developed a working Management system using Java. I have two topsecret 
+             projects in development.
+            </p>
+            <p>
+              In my free time I like to cook and kata. You can find me on codewars.
+            </p>
+            <p>
+              Fun fact! I've been programing for
+              <span id="time-container">0</span> seconds!
+            </p>
+          </div>
+          <img
+            src="./Daniel.jpg"
+            alt="A photo of me"
+            class="portrait"
+            
+          />
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Java Management System</h3>
+          </summary>
+          <img
+            src=""
+            alt="Built with jdbc for database connectivity to SQL"
+            class="project-image"
+          />
+          <p class="project-description">
+            My first project built with Java github: link here
+          </p>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Secret Project1</h3>
+          </summary>
+          <img
+            src=""
+            alt="A website"
+            class="project-image"
+          />
+          <p class="project-description">
+            clue: A web based application built using javascript.
+          </p>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Secret Project 2</h3>
+          </summary>
+          <img
+            src=""
+            alt=""
+            class="project-image"
+          />
+          <p class="project-description">
+            clue: Will be a way to view investments track profit/losses.
+            with functionality to work out dividend percentage based on current stock price.
+          </p>
+        </details>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container">
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-git"></i>
+          <i class="fab fa-Java"></i>
+          <i class="fab fa-node"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </section>
+    </main>
+
+    <footer>Made By Daniel Maton-Walker <span class="heart"></span> </footer>
+  </body>
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "06-06-2022";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
+</html>
